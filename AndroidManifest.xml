@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.parkour.occular"
+      android:versionCode="1"
+      android:versionName="1.0">
+<!--       android:installLocation="preferExternal
+this is causing problems with the libndkfoo.so in /data/data/com.parkour.occular/lib/.
+Put this back into <manifest when the program is ready for shipping.
+ -->
+
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.SET_ORIENTATION"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="andriod.hardware.sensor.accelerometer"/>
+    <uses-feature android:name="android.hardware.wakelock" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".Entry"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="OccProto"
+        			android:label="Proto"
+        			android:screenOrientation="landscape"
+        			android:configChanges="orientation|keyboardHidden">
+        	<intent-filter>
+        		<action android:name="android.intent.action.MAIN"/> 
+        	 </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
